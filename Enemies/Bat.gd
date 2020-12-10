@@ -45,7 +45,7 @@ func seek_player():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 120
+	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
 
 func _on_Stats_no_health():

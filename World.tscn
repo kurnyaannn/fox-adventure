@@ -490,7 +490,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 position = Vector2( 160, 90 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, -32, 400, 288 )
+region_rect = Rect2( -256, -192, 656, 448 )
 
 [node name="Dirt" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -505,10 +505,18 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 2, -65529, 0, 0, -65528, 0, 1, -65527, 0, 2, 65535, 0, 65536, 0, 0, 131077, 1, 0, 2, 7, 0, 131072, 8, 0, 131073, 9, 0, 65543, 131071, 0, 131072, 65536, 0, 131073, 65537, 0, 131074, 65545, 0, 131075, 196617, 0, 3, 262144, 0, 3, 262148, 0, 0, 262149, 0, 2, 262151, 0, 0, 262152, 0, 1, 262153, 0, 131079, 327680, 0, 131076, 327681, 0, 1, 327682, 0, 1, 327683, 0, 1, 327684, 0, 131078, 327685, 0, 65538, 327687, 0, 131072, 327688, 0, 131073, 327689, 0, 131074, 393216, 0, 131072, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131074 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 18, 98 )
+current = true
+smoothing_enabled = true
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 18, 98 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Bushes" type="YSort" parent="YSort"]
 
@@ -594,4 +602,6 @@ position = Vector2( 209, 165 )
 [node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 139, 39 )
 
-[node name="HealthUI" parent="." instance=ExtResource( 8 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]

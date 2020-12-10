@@ -8,5 +8,6 @@ func can_see_player():
 func _on_PlayerDetectionZone_body_entered(body):
 	player = body
 
+# warning-ignore:unused_argument
 func _on_PlayerDetectionZone_body_exited(body):
 	player = null

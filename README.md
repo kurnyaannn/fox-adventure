@@ -15,4 +15,4 @@
   D  | Attack
   
 ## Status
-***Unfinished***
+***Finished***
